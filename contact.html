@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adil Jamal - Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js" defer></script>
+</head>
+
+<body>
+    <section class="headerContact">
+        <nav>
+            <a href="index.html" id="initials"><img src="logo/logo.jpeg" alt="M A J">
+                <h1>Adil Jamal</h1>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <div class="fa-solid" onclick="hideMenu();">Close</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="blog.html">Blogs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="fa-solid" onclick="showMenu();">Menu</div>
+        </nav>
+        <div class="text-box">
+            <p>The best way to know someone is to find a way to connect with them</p>
+            <p>So why wait!</p>
+            <h1>Contact Me</h1>
+            <a href="#main">Scroll Down</a>
+        </div>
+    </section>
+    <section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56992.6589728097!2d82.1140164834589!3d26.77495705443603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+                        1!3m3!1m2!1s0x399a0610a9258393%3A0xc9fa91ca68051ca8!2sFaizabad%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1673019913807!5m2!1sen!2sin" 
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <main id="main">
+    <section class="contact-info">
+        <div class="row">
+            <div class="contact-info-column">
+                <div class="cpe">
+                    <img src="images/home-icon.png">
+                    <span>
+                        <a href="https://en.wikipedia.org/wiki/Faizabad"><h5>Faizabad</h5></a>
+                        <p>U.P India 224001</p>
+                    </span>
+                </div>
+                <div class="cpe">
+                    <img src="images/phone-icon.png">
+                    <span>
+                        <a href="tel:+919616882011"><h5>+91 9616882011</h5></a>
+                        <p>Monday to Saturday, 10AM to 6PM</p>
+                    </span>
+                </div>
+                <div class="cpe">
+                    <img src="images/mail-icon.png">
+                    <span>
+                        <a href="mailto:jamal.adil33@gmail.com"><h5>jamal.adil33@live.com</h5></a>
+                        <p>Email your query</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-info-column">
+                <h2>Send me a message here</h2>
+                <form onsubmit="sendEmail(); reset(); return false;">
+                    <input type="text" id="name" placeholder="Enter your name" required></input>
+                    <input type="email" id="email" placeholder="Email address" required></input>
+                    <input type="text" id="subject" placeholder="Subject"></input>
+                    <textarea rows="5" id="message" placeholder="Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+    <section class="footer">
+        <div>
+            <h4>Social</h4>
+            <p>Connect with me on a social media platform or Github</p>
+        </div>
+        <div class="logos">
+            <img src="logo/fb-logo.png" alt="fb">
+            <img src="logo/insta-logo.png" alt="insta">
+            <img src="logo/Linkedin-logo.png" alt="linked">
+            <img src="logo/twitter-logo.png" alt="twitter">
+            <img src="logo/github-logo.png" alt="github">
+        </div>
+    </section>
+        <div class="copyright">
+            <p>Copyright © 2023 AdilJamal</p>
+        </div>
+
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                SecureToken: "b5622076-53d3-48c2-837b-092d010128ea",
+                To: "jamal.adil33@gmail.com",
+                From: document.getElementById("email").value,
+                Subject: "New Contact Form Enquiry",
+                Body: "Name: " + document.getElementById("name").value
+                    + "<br>Subject: " + document.getElementById("subject").value
+                    + "<br>Message: " + document.getElementById("message").value
+            }).then(
+                message => alert("Message sent successfully")
+            );
+        }
+    </script>
+</body>
+</html>
